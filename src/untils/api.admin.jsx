@@ -9,3 +9,8 @@ export const refreshToken = async ()=>{
     const data = await axios.post("/admin/refreshToken")
     return data
 }
+
+export const createGenre = async (content) => {
+    const data = await axios.post("/admin/genre/create",{content})
+    return data
+}

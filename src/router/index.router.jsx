@@ -3,6 +3,8 @@ import AuthLayout from "../layout/admin/auth";
 import Login from "../pages/admin/login";
 import DashBoard from "../pages/admin/dashboard";
 import DefaultLayout from "../layout/admin/default";
+import Genre from "../pages/admin/genre/genreList";
+import GenreList from "../pages/admin/genre/genreList";
 
 let routes = createBrowserRouter([
   {
@@ -22,6 +24,10 @@ let routes = createBrowserRouter([
       {
         path: 'dashboard',
         Component: DashBoard
+      },
+      {
+        path: 'genre',
+        Component: GenreList
       },
     ],
   },
