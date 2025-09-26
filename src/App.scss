@@ -1,0 +1,6 @@
+.box1 {
+  color: red;
+  &__child {
+    color: blue;
+  }
+}
