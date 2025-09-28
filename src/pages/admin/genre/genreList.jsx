@@ -1,33 +1,53 @@
-import { createGenre } from "../../../untils/api.admin"
+import { useEffect, useState } from "react"
 import CreateModal from "./createModal"
-
-function GenreList() {
-    // const [genre]
-    const handleOnSubmit = (e) => {
-        e.preventDefault()
-        const callListGenre = async () => {
-            const data = await getGenres()
-            console.log(data)
-        }
-        callCreatGenre()
+import { callGenre } from "../../../untils/api.admin"
+import "./genre.scss"
+function Genres() {
+    let [genres, setGenres] = useState([])
+    const [isCreateModal, setCreateModal] = useState(false);
+    const handleClickCreate = () => {
+        setCreateModal(!isCreateModal);
     }
+    useEffect(() => {
+        const getGenres = async () => {
+            try {
+                const data = await callGenre()
+                setGenres(data.data)
+            } catch (error) {
+                alert(error)
+            }
+        }
+        getGenres()
+    }, [])
     return (
         <>
-            <CreateModal />
-            <form onSubmit={handleOnSubmit}>
-                <div className="wrap">
-                    <div className="wrap__title">
-                        <label htmlFor="title">Title</label>
-                        <input id="title" type="text" />
-                    </div>
-                    <div className="wrap__desc">
-                        <label htmlFor="desc">Description</label>
-                        <textarea name="desc" id="desc" ></textarea>
-                    </div>
-                </div>
-                <button >Create</button>
-            </form>
+            <div className="wrap">
+                <table >
+                    <thead>
+                        <tr className="headerTable">
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>CreatedAt</th>
+                            <th>UpdatedAt</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            genres.map(genre => (
+                                <tr key={genre["_id"]}>
+                                    <td>{genre.title}</td>
+                                    <td>{genre.status}</td>
+                                    <td>{genre.createdAt}</td>
+                                    <td>{genre.updatedAt}</td>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <button onClick={handleClickCreate}  >Create</button>
+            {isCreateModal && <CreateModal modalData={{ genres, setGenres }} />}
         </>
     )
 }
-export default GenreList
+export default Genres

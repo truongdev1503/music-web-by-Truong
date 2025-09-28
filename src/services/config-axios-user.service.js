@@ -1,5 +1,6 @@
 import axios from "axios"
-import { refreshToken } from "../untils/api.admin";
+import { refreshToken } from "../untils/api.user";
+
 
 // Add a request interceptor
 axios.defaults.baseURL = 'http://localhost:3001'
@@ -28,7 +29,7 @@ axios.interceptors.response.use(function (response) {
     const originalRequest = error.config;
     error.config._retry = true;
     try {
-      const res = await refreshToken();
+      const res = await refreshToken;
       if(res && res.access){
         const { access } = res;
         console.log('Access token refreshed successfully');
@@ -43,7 +44,7 @@ axios.interceptors.response.use(function (response) {
       else{
         console.error('Failed to refresh access token');
         localStorage.removeItem('token');
-        window.location.href = '/admin/login';
+        window.location.href = '/login';
         return Promise.reject(new Error('Failed to refresh access token'));
       }
     } catch (error) {
