@@ -7,12 +7,14 @@ import Genres from "../pages/admin/genre/genreList";
 import Register from "../pages/user/register";
 import UserLogin from "../pages/user/login";
 import HomePage from "../pages/user/home";
+import AuthLayoutUser from "../layout/user/auth";
+import DefaultLayoutUser from "../layout/user/default";
 
 
 let routes = createBrowserRouter([
   {
     path: '/',
-    Component: AuthLayout,
+    Component: AuthLayoutUser,
     children: [
       {
         path: 'register',
@@ -26,7 +28,7 @@ let routes = createBrowserRouter([
   },
   {
     path: '/',
-    Component: DefaultLayout,
+    Component: DefaultLayoutUser,
     children: [
       {
         path: 'home',
