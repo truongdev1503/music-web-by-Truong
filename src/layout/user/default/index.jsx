@@ -18,14 +18,14 @@ function DefaultLayoutUser() {
                     <div className="wrap__header">
                         <div className="wrap__search">
                             <ImSearch />
-                            <input type="text" placeholder="Tìm kiếm bài hát, ca sĩ " />
+                            <input type="text" placeholder=" What are you looking for? " />
                         </div>
                         <div className="avatar">
                             <button className = "avatarButton" onClick={handleOpenProfileMenu} >T </button>
                             {isOpenProfileMenu && <ProfileMenu />}
                         </div>
                     </div>
-                    {/* <div className="wrap__content">Content</div> */}
+                    <div className="wrap__content">Content</div>
                 </div>
             </div>
             <Outlet />
