@@ -9,6 +9,9 @@ import UserLogin from "../pages/user/login";
 import HomePage from "../pages/user/home";
 import AuthLayoutUser from "../layout/user/auth";
 import DefaultLayoutUser from "../layout/user/default";
+import ArtistLayout from "../layout/user/artistLayout";
+import Album from "../pages/user/studio/album";
+import Song from "../pages/user/studio/song";
 
 
 let routes = createBrowserRouter([
@@ -33,8 +36,21 @@ let routes = createBrowserRouter([
       {
         path: 'home',
         Component: HomePage
-      },
-      
+      }, 
+    ]
+  },
+   {
+    path: '/studio',
+    Component: ArtistLayout,
+    children: [
+      {
+        path: 'album',
+        Component: Album
+      }, 
+      {
+        path: 'song',
+        Component: Song
+      }, 
     ]
   },
   {

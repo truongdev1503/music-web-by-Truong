@@ -1,7 +1,7 @@
 import { createGenre } from "../../../untils/api.admin";
 
 const CreateModal = (props) => {
-    const { setGenres } = props.modalData;
+    const {setGenres} = props.modalData;
     const handelOnSubmit = (e) => {
         const infoGenre = {
             "title": e.target.title.value,
@@ -11,7 +11,8 @@ const CreateModal = (props) => {
         const callCreateGenre = async () => {
             try {
                 const data = await createGenre(infoGenre)
-                setGenres(pre => [...pre, data.data])
+                setGenres(pre => [...pre,data])
+                console.log("thành công")
             } catch (error) {
                 console.log(error)
             }

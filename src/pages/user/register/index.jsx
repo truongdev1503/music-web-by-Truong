@@ -1,6 +1,6 @@
 import { register } from "../../../untils/api.user";
 import { useNavigate } from "react-router";
-import "./style.scss"
+// import "./style.scss"
 
 function Register() {
     let navigate = useNavigate();

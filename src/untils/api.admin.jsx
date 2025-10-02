@@ -11,7 +11,7 @@ export const refreshToken = async ()=>{
 }
 
 export const callGenre = async () => {
-    const data = await axios.get("/admin/genre")
+    const data = await axios.get("/admin/genre?limit=100")
     return data
 }
 

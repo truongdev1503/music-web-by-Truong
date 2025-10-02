@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom"
 import { ImSearch } from "react-icons/im";
-import "./style.scss"
 import { useState } from "react";
 import ProfileMenu from "./profileMenu";
 function DefaultLayoutUser() {
@@ -11,12 +10,11 @@ function DefaultLayoutUser() {
     }
     return (
         <>
-
-            <div className="wrap">
-                <div className="wrap__sidebar">Sidebar</div>
-                <div className="wrap__contain">
-                    <div className="wrap__header">
-                        <div className="wrap__search">
+            <div className="defaultLayoutUserWrap">
+                <div className="defaultLayoutUserWrap__sidebar">Sidebar</div>
+                <div className="defaultLayoutUserWrap__contain">
+                    <div className="defaultLayoutUserWrap__header">
+                        <div className="defaultLayoutUserWrap__search">
                             <ImSearch />
                             <input type="text" placeholder=" What are you looking for? " />
                         </div>
@@ -25,7 +23,7 @@ function DefaultLayoutUser() {
                             {isOpenProfileMenu && <ProfileMenu />}
                         </div>
                     </div>
-                    <div className="wrap__content">Content</div>
+                    <div className="defaultLayoutUserWrap__content">Content</div>
                 </div>
             </div>
             <Outlet />

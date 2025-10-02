@@ -1,7 +1,7 @@
 
 import './App.scss'
 import { RouterProvider } from "react-router-dom";
-import DefaultLayout from './layout/admin/default';
+// import DefaultLayout from './layout/admin/default';
 import routes from './router/index.router';
 function App() {
   return (

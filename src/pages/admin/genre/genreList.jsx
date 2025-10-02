@@ -12,7 +12,7 @@ function Genres() {
         const getGenres = async () => {
             try {
                 const data = await callGenre()
-                setGenres(data.data)
+                setGenres(data)            
             } catch (error) {
                 alert(error)
             }

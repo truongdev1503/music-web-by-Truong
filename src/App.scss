@@ -1,6 +1,81 @@
-.box1 {
-  color: red;
-  &__child {
-    color: blue;
+.defaultLayoutUserWrap {
+  background-color: #dcd9d0;
+  display: flex;
+  height: 500px;
+  &__sidebar {
+    color: white;
+    background-color: #121212;
+    flex: 2;
   }
+  &__contain {
+    background-color: #231b2e;
+    padding: 20px 60px;
+    flex: 8;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 30px;
+    & .avatar {
+      position: relative;
+      button {
+        background-color: green;
+        padding: 10px 15px;
+        border-radius: 45px;
+        border: 0px;
+      }
+    }
+  }
+  &__search {
+    background-color: white;
+    display: inline-block;
+    padding: 15px 20px;
+    border-radius: 25px;
+    & input {
+      border: none;
+      outline: none;
+    }
+  }
+  .wrap__content {
+    color: white;
+    height: 300px;
+    background-color: #170f23;
+  }
+}
+
+.profileModal{
+    color: white;
+    width: 170px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color:#282828;
+    border-radius: 15px;
+    border: 1px solid rgba(245, 222, 179, 0.403);
+    &__header{
+        border-bottom: 1px solid rgba(245, 222, 179, 0.403);
+        padding: 10px 20px ;
+    }
+    &__body{
+        padding: 10px 20px ;
+        border-bottom: 1px solid rgba(245, 222, 179, 0.403);
+    }
+    &__footer{
+        padding: 10px 20px ;
+        display: flex;
+        align-items: center;
+    }
+    &__item{
+        display: flex;
+         align-items: center;
+        margin-bottom: 15px;
+    }
+    &__item:last-child{
+        margin-bottom: 0px;
+    }
+    &__icon{
+        margin-right: 10px;
+      
+    }
 }
