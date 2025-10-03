@@ -2,6 +2,8 @@ import { Outlet } from "react-router-dom"
 import { ImSearch } from "react-icons/im";
 import { useState } from "react";
 import ProfileMenu from "./profileMenu";
+import "./defaultLayoutUser.scss"
+
 function DefaultLayoutUser() {
     const [isOpenProfileMenu, setOpenProfileMenu] = useState(false);
     const handleOpenProfileMenu = () => {

@@ -1,0 +1,34 @@
+$primary-color: #64ed84;
+.studioWrap {
+  display: flex;
+  &__sidebar {
+    flex: 2;
+    background-color: #171717;
+    padding: 20px 15px;
+  }
+  &__contain {
+    flex: 8;
+    background-color: $primary-color;
+  }
+  &__logo {
+    img {
+      width: 100px;
+      height: auto;
+    }
+  }
+  &__item.active{
+      display: flex;
+      background-color: #233b38 ;
+      border-radius: 5px;
+      .icon {
+            color: $primary-color;
+            margin-right: 10px;
+            margin-bottom: 20px;
+            
+        }
+        span{
+            color: $primary-color;
+        }
+    
+  }
+}

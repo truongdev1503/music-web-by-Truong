@@ -1,4 +1,4 @@
-// import "./style.scss"
+import "./profileMenu.scss"
 import { CgProfile } from "react-icons/cg";
 import { CiMusicNote1 } from "react-icons/ci";
 import { IoIosLogOut } from "react-icons/io";
