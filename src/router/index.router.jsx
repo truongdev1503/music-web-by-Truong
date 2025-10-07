@@ -12,6 +12,10 @@ import DefaultLayoutUser from "../layout/user/default";
 import ArtistLayout from "../layout/user/artistLayout";
 import Album from "../pages/user/studio/album";
 import Song from "../pages/user/studio/song";
+import Playlists from "../pages/user/playlist";
+import LikedSongs from "../pages/user/likedSongs";
+import TopHit from "../pages/user/topHit";
+import Playlist from "../pages/user/playlist";
 
 
 let routes = createBrowserRouter([
@@ -35,8 +39,20 @@ let routes = createBrowserRouter([
     children: [
       {
         path: 'home',
-        Component: HomePage
+        Component: HomePage,
       }, 
+      {
+        path: "play-list",
+        Component: Playlist
+      },
+      {
+        path: "liked-songs",
+        Component: LikedSongs
+      },
+      {
+        path: "top-hits",
+        Component: TopHit
+      }
     ]
   },
    {

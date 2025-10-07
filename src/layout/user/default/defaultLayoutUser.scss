@@ -37,11 +37,6 @@
       outline: none;
     }
   }
-  &__content {
-    color: white;
-    height: 300px;
-    background-color: brown;
-  }
 
   &__logo {
     img {
@@ -52,20 +47,23 @@
   &__items {
     padding: 10px 10px;
     .childItem {
+      all: unset;
+      cursor: pointer;
       display: flex;
-      // align-items: center;
-      background-color: #233b38;
+      align-items: center;
       border-radius: 5px;
       margin-bottom: 5px;
       padding: 15px 10px;
+      
       .icon {
-        color: var(--primary-color);
-
+        font-size: 24px;
         margin-right: 10px;
       }
-      span {
+      &.active{
+        background-color: #233b38;
         color: var(--primary-color);
       }
+       
     }
   }
 }

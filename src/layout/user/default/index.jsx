@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom"
+import { Link, NavLink } from "react-router";
 import { ImSearch } from "react-icons/im";
 import { IoHome } from "react-icons/io5";
 import { RiPlayListFill } from "react-icons/ri";
@@ -19,26 +20,51 @@ function DefaultLayoutUser() {
             <div className="defaultLayoutUserWrap">
                 <div className="defaultLayoutUserWrap__sidebar">
                     <div className="defaultLayoutUserWrap__logo">
-                        <a href="/home" className="defaultLayoutUserWrap__logo">
-                            <img src={mylogo} alt="logo" /></a>
+                        <Link to="/home" className="defaultLayoutUserWrap__logo">
+                            <img src={mylogo} alt="logo" /></Link>
                     </div>
                     <div className="defaultLayoutUserWrap__items">
-                        <div className="childItem">
-                            <IoHome className="icon"/>
+                        <NavLink
+                            to="/home"
+                            className={({ isActive }) =>
+                                isActive ? "childItem active" : "childItem"
+                            }
+                        >
+                            <IoHome className="icon" />
                             <span>Home</span>
-                        </div>
-                        <div className="childItem">
+                        </NavLink>
+                        <NavLink
+                            to="/play-list"
+                            className={({ isActive }) =>
+                                isActive ? "childItem active" : "childItem"
+                            }
+                        >
                             <RiPlayListFill className="icon" />
-                            <span>Playlists</span>
-                        </div>
-                        <div className="childItem">
+                            <span>Playlist</span>
+                        </NavLink>
+                        <NavLink
+                            to="liked-songs"
+                            className={({ isActive }) =>
+                                isActive ? "childItem active" : "childItem"
+                            }
+                        >
                             <FaHeartbeat className="icon" />
                             <span>Liked Songs</span>
-                        </div>
-                        <div className="childItem">
-                            <MdPlaylistAddCheckCircle className="icon" />
+                        </NavLink>
+                        <NavLink
+                            to="/top-hits"
+                            className={({ isActive }) =>
+                                isActive ? "childItem active" : "childItem"
+                            }
+                        >
+                             <MdPlaylistAddCheckCircle className="icon" />
                             <span>Top Hits</span>
-                        </div>
+                        </NavLink>
+                        
+                            
+                       
+                           
+                      
                     </div>
                 </div>
                 <div className="defaultLayoutUserWrap__contain">
@@ -52,10 +78,10 @@ function DefaultLayoutUser() {
                             {isOpenProfileMenu && <ProfileMenu />}
                         </div>
                     </div>
-                    <div className="defaultLayoutUserWrap__content">Content</div>
+                    <Outlet />
                 </div>
             </div>
-            <Outlet />
+
         </>
     )
 }
